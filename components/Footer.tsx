@@ -21,6 +21,18 @@ function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
   );
 }
 
+function TikTokIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43c.48-.48.86-1.05 1.11-1.68.25-.63.38-1.3.37-1.98V8.78a8.17 8.17 0 0 0 4.25 1.25V6.69z" />
+    </svg>
+  );
+}
+
 export default function Footer() {
   const currentYear = 2026;
 
@@ -157,7 +169,19 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors inline-flex items-center gap-1"
                 >
-                  <span>{BUSINESS_INFO.instagram.handle}</span>
+                  <span>Instagram: {BUSINESS_INFO.instagram.handle}</span>
+                  <ArrowUpRight className="w-3 h-3 text-wad-steel" />
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <TikTokIcon className="w-4 h-4 text-wad-steel shrink-0 mt-0.5" />
+                <a
+                  href={BUSINESS_INFO.tiktok.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors inline-flex items-center gap-1"
+                >
+                  <span>TikTok: {BUSINESS_INFO.tiktok.handle}</span>
                   <ArrowUpRight className="w-3 h-3 text-wad-steel" />
                 </a>
               </li>

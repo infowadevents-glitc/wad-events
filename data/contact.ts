@@ -13,8 +13,12 @@ export const BUSINESS_INFO = {
     return `https://wa.me/23490778881443?text=${text}`;
   },
   instagram: {
-    handle: "@Planwithwad",
-    url: "https://instagram.com/Planwithwad",
+    handle: "@planwithwad",
+    url: "https://www.instagram.com/planwithwad",
+  },
+  tiktok: {
+    handle: "@planwithwad",
+    url: "https://www.tiktok.com/@planwithwad",
   },
   location: "Available for Lagos & Destination Celebrations",
   hashtags: ["#WADEvents", "#PlanwithWAD", "#CelebrateWithCare"],
