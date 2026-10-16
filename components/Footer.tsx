@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Heart, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, Heart, ArrowUpRight, MessageCircle } from "lucide-react";
+import { BUSINESS_INFO } from "@/data/contact";
 
 function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
@@ -121,27 +122,48 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-wad-steel shrink-0 mt-0.5" />
                 <a
-                  href="mailto:hello@wadevents.com"
+                  href={`mailto:${BUSINESS_INFO.email}`}
                   className="hover:text-white transition-colors"
                 >
-                  hello@wadevents.com
+                  {BUSINESS_INFO.email}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone className="w-4 h-4 text-wad-steel shrink-0 mt-0.5" />
+                <a
+                  href={BUSINESS_INFO.phoneTel}
+                  className="hover:text-white transition-colors"
+                >
+                  {BUSINESS_INFO.phoneFormatted}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0 mt-0.5" />
+                <a
+                  href={BUSINESS_INFO.getWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors inline-flex items-center gap-1"
+                >
+                  <span>WhatsApp: {BUSINESS_INFO.phoneFormatted}</span>
+                  <ArrowUpRight className="w-3 h-3 text-wad-steel" />
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <InstagramIcon className="w-4 h-4 text-wad-steel shrink-0 mt-0.5" />
                 <a
-                  href="https://instagram.com/Planwithwad"
+                  href={BUSINESS_INFO.instagram.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors inline-flex items-center gap-1"
                 >
-                  <span>@Planwithwad</span>
+                  <span>{BUSINESS_INFO.instagram.handle}</span>
                   <ArrowUpRight className="w-3 h-3 text-wad-steel" />
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-wad-steel shrink-0 mt-0.5" />
-                <span>Available for Lagos &amp; Destination Celebrations</span>
+                <span>{BUSINESS_INFO.location}</span>
               </li>
             </ul>
 

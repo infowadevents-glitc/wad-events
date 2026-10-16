@@ -9,7 +9,7 @@ interface WhatsAppButtonProps {
 
 export default function WhatsAppButton({
   message = "Hello WAD Events, I am interested in planning an event and would love to discuss your services.",
-  phoneNumber = "", // Optional default business number
+  phoneNumber = "23490778881443", // Official WAD Events business number
 }: WhatsAppButtonProps) {
   const encodedText = encodeURIComponent(message);
   const href = phoneNumber

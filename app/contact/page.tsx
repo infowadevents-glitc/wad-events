@@ -17,6 +17,7 @@ import {
   ShieldCheck,
   Send,
 } from "lucide-react";
+import { BUSINESS_INFO } from "@/data/contact";
 
 // Social Instagram icon component
 function InstagramIcon({ className = "w-5 h-5" }: { className?: string }) {
@@ -179,7 +180,7 @@ function ContactFormContent() {
 • Support Needed: ${formData.supportLevel}
 ${formData.vision ? `• Notes: ${formData.vision}` : ""}`;
 
-    const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    const url = BUSINESS_INFO.getWhatsAppUrl(message);
     window.open(url, "_blank");
   };
 
@@ -215,12 +216,14 @@ ${formData.vision ? `• Notes: ${formData.vision}` : ""}`;
                 <MessageCircle className="w-6 h-6" />
               </div>
               <h3 className="font-serif text-xl font-semibold text-wad-charcoal dark:text-white">
-                Instant Messaging
+                WhatsApp Messaging
               </h3>
               <p className="text-sm text-wad-slate dark:text-wad-nude/75 leading-relaxed">
-                Need an immediate conversation regarding event availability or
-                rates? Chat with our planning team directly.
+                Chat directly with our planning directors for instant date checks, quick quotes, or event consultations:
               </p>
+              <div className="p-3 rounded-2xl bg-wad-canvas dark:bg-white/5 border border-wad-nude/60 dark:border-white/10 font-mono text-sm text-wad-charcoal dark:text-white font-semibold">
+                {BUSINESS_INFO.phoneFormatted}
+              </div>
               <button
                 type="button"
                 onClick={handleWhatsAppDirect}
@@ -231,23 +234,42 @@ ${formData.vision ? `• Notes: ${formData.vision}` : ""}`;
               </button>
             </div>
 
+            {/* Direct Phone Call Card */}
+            <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-wad-charcoal-card border border-wad-nude/80 dark:border-white/10 shadow-sm space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-wad-wine/10 dark:bg-white/10 flex items-center justify-center text-wad-wine dark:text-wad-steel">
+                <Phone className="w-6 h-6" />
+              </div>
+              <h3 className="font-serif text-xl font-semibold text-wad-charcoal dark:text-white">
+                Direct Phone Call
+              </h3>
+              <p className="text-sm text-wad-slate dark:text-wad-nude/75 leading-relaxed">
+                Prefer to speak over the phone? Call our lead planner directly:
+              </p>
+              <a
+                href={BUSINESS_INFO.phoneTel}
+                className="w-full inline-flex items-center justify-center gap-2 bg-wad-wine hover:bg-wad-wine-dark text-white text-sm font-medium py-3 px-5 rounded-full shadow-sm transition-all"
+              >
+                <Phone className="w-4 h-4" />
+                <span>Call {BUSINESS_INFO.phoneFormatted}</span>
+              </a>
+            </div>
+
             {/* Email Card */}
             <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-wad-charcoal-card border border-wad-nude/80 dark:border-white/10 shadow-sm space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-wad-wine/10 dark:bg-white/10 flex items-center justify-center text-wad-wine dark:text-wad-steel">
                 <Mail className="w-6 h-6" />
               </div>
               <h3 className="font-serif text-xl font-semibold text-wad-charcoal dark:text-white">
-                Direct Enquiries
+                Official Email Enquiries
               </h3>
               <p className="text-sm text-wad-slate dark:text-wad-nude/75">
-                For detailed proposals, vendor pitches, or official corporate
-                tenders:
+                For detailed RFPs, vendor decks, and formal corporate event inquiries:
               </p>
               <a
-                href="mailto:hello@wadevents.com"
-                className="inline-block text-sm font-medium text-wad-wine dark:text-wad-steel hover:underline"
+                href={`mailto:${BUSINESS_INFO.email}`}
+                className="inline-block text-sm font-semibold text-wad-wine dark:text-wad-steel hover:underline"
               >
-                hello@wadevents.com
+                {BUSINESS_INFO.email}
               </a>
             </div>
 
@@ -262,17 +284,17 @@ ${formData.vision ? `• Notes: ${formData.vision}` : ""}`;
               </p>
               <div className="space-y-2 text-xs">
                 <a
-                  href="https://instagram.com/Planwithwad"
+                  href={BUSINESS_INFO.instagram.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-wad-steel hover:text-white transition-colors"
                 >
                   <InstagramIcon className="w-4 h-4" />
-                  <span>@Planwithwad</span>
+                  <span>{BUSINESS_INFO.instagram.handle}</span>
                 </a>
                 <div className="flex items-center gap-2 text-wad-nude/80 pt-1">
                   <MapPin className="w-4 h-4 text-wad-steel shrink-0" />
-                  <span>Available for Lagos &amp; Destination Occasions</span>
+                  <span>{BUSINESS_INFO.location}</span>
                 </div>
               </div>
             </div>

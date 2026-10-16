@@ -294,7 +294,7 @@ export default function ServicesPage() {
               </Link>
 
               <a
-                href="https://wa.me/?text=Hello%20WAD%20Events%2C%20I%20reviewed%20your%20services%20and%20would%20love%20to%20discuss%20planning%20an%20event."
+                href="https://wa.me/23490778881443?text=Hello%20WAD%20Events%2C%20I%20reviewed%20your%20services%20and%20would%20love%20to%20discuss%20planning%20an%20event."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white border border-white/30 text-sm sm:text-base font-semibold px-8 py-3.5 rounded-full transition-all"
