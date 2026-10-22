@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Sparkles,
   Layers,
@@ -51,9 +52,7 @@ export default function ServicesPage() {
         {/* CORE SERVICES DETAILED CARDS                              */}
         {/* ========================================================= */}
         <div className="space-y-12 mb-24">
-          {SERVICES.map((service, idx) => {
-            const isEven = idx % 2 === 1;
-
+          {SERVICES.map((service) => {
             return (
               <div
                 key={service.id}
@@ -105,22 +104,37 @@ export default function ServicesPage() {
                     </div>
                   </div>
 
-                  {/* Right Column: Key Inclusions & Features (5 cols) */}
-                  <div className="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-wad-canvas/70 dark:bg-white/5 border border-wad-nude/60 dark:border-white/10 space-y-4">
-                    <h3 className="text-xs font-semibold uppercase tracking-wider text-wad-charcoal/80 dark:text-wad-nude/70">
-                      Key Inclusions &amp; Deliverables:
-                    </h3>
-                    <ul className="space-y-3">
-                      {service.features.map((feature, fIdx) => (
-                        <li
-                          key={fIdx}
-                          className="flex items-start gap-3 text-xs sm:text-sm text-wad-slate dark:text-wad-nude/80"
-                        >
-                          <CheckCircle2 className="w-4 h-4 text-wad-wine dark:text-wad-steel shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Right Column: Image Preview + Key Inclusions (5 cols) */}
+                  <div className="lg:col-span-5 space-y-4">
+                    {service.image && (
+                      <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md border border-wad-nude/70 dark:border-white/10 group">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 450px"
+                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-70 group-hover:opacity-40 transition-opacity" />
+                      </div>
+                    )}
+
+                    <div className="p-6 rounded-2xl bg-wad-canvas/70 dark:bg-white/5 border border-wad-nude/60 dark:border-white/10 space-y-3">
+                      <h3 className="text-xs font-semibold uppercase tracking-wider text-wad-charcoal/80 dark:text-wad-nude/70">
+                        Key Inclusions &amp; Deliverables:
+                      </h3>
+                      <ul className="space-y-2.5">
+                        {service.features.map((feature, fIdx) => (
+                          <li
+                            key={fIdx}
+                            className="flex items-start gap-2.5 text-xs sm:text-sm text-wad-slate dark:text-wad-nude/80"
+                          >
+                            <CheckCircle2 className="w-4 h-4 text-wad-wine dark:text-wad-steel shrink-0 mt-0.5" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -145,6 +159,22 @@ export default function ServicesPage() {
               <p className="text-sm sm:text-base text-wad-nude/80 leading-relaxed font-sans">
                 {CAMPAIGN_72_HOURS.description}
               </p>
+
+              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/15 my-4">
+                <Image
+                  src="/image/E44750E2-F094-4FB1-B956-A13DFD8EA569.JPG.jpeg"
+                  alt="Couple experiencing seamless wedding planning"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 550px"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-wad-charcoal/80 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-4 right-4">
+                  <p className="font-serif italic text-xs text-wad-nude">
+                    &ldquo;72 hours to clarity, confidence, and zero wedding stress.&rdquo;
+                  </p>
+                </div>
+              </div>
 
               <ul className="space-y-2.5 pt-2">
                 {CAMPAIGN_72_HOURS.benefits.map((benefit, bIdx) => (
@@ -212,17 +242,38 @@ export default function ServicesPage() {
             {OCCASIONS.map((occasion) => (
               <div
                 key={occasion.id}
-                className="p-6 rounded-2xl bg-white dark:bg-wad-charcoal-card border border-wad-nude/80 dark:border-white/10 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                className="group overflow-hidden rounded-3xl bg-white dark:bg-wad-charcoal-card border border-wad-nude/80 dark:border-white/10 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
-                <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-wad-slate dark:text-wad-steel px-2.5 py-0.5 rounded-full bg-wad-canvas dark:bg-white/10 border border-wad-nude dark:border-white/10">
-                  {occasion.tag}
-                </span>
-                <h3 className="font-serif text-xl font-semibold text-wad-charcoal dark:text-white mt-3 mb-2">
-                  {occasion.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-wad-slate dark:text-wad-nude/70 leading-relaxed">
-                  {occasion.description}
-                </p>
+                {occasion.image && (
+                  <div className="relative aspect-[16/10] overflow-hidden bg-wad-charcoal/5 dark:bg-black/20">
+                    <Image
+                      src={occasion.image}
+                      alt={occasion.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-wad-charcoal/80 via-transparent to-transparent opacity-80" />
+                    <div className="absolute top-3.5 left-3.5">
+                      <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-wad-charcoal dark:text-white px-3 py-1 rounded-full bg-white/95 dark:bg-wad-charcoal/90 backdrop-blur-sm shadow-sm">
+                        {occasion.tag}
+                      </span>
+                    </div>
+                  </div>
+                )}
+                <div className="p-6">
+                  {!occasion.image && (
+                    <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-wad-slate dark:text-wad-steel px-2.5 py-0.5 rounded-full bg-wad-canvas dark:bg-white/10 border border-wad-nude dark:border-white/10">
+                      {occasion.tag}
+                    </span>
+                  )}
+                  <h3 className="font-serif text-xl font-semibold text-wad-charcoal dark:text-white mt-1 mb-2 group-hover:text-wad-wine dark:group-hover:text-wad-steel transition-colors">
+                    {occasion.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-wad-slate dark:text-wad-nude/70 leading-relaxed">
+                    {occasion.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

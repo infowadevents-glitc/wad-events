@@ -9,6 +9,7 @@ export interface ServiceItem {
   ctaHref: string;
   icon: string;
   highlight?: string;
+  image?: string;
   features: string[];
 }
 
@@ -17,6 +18,7 @@ export interface OccasionCategory {
   title: string;
   description: string;
   tag: string;
+  image?: string;
 }
 
 export const SERVICES: ServiceItem[] = [
@@ -32,6 +34,7 @@ export const SERVICES: ServiceItem[] = [
     ctaText: "Inquire About Full Planning",
     ctaHref: "/contact?service=full-planning",
     icon: "Sparkles",
+    image: "/image/A6871AC0-4697-41F8-BD40-AA398BD2D776.JPG.jpeg",
     features: [
       "End-to-end timeline & budget management",
       "Curated vendor recommendations & negotiations",
@@ -52,6 +55,7 @@ export const SERVICES: ServiceItem[] = [
     ctaText: "Inquire About Coordination",
     ctaHref: "/contact?service=event-coordination",
     icon: "Layers",
+    image: "/image/E81D08BD-ED01-44B0-A575-7AB149615178.JPG.jpeg",
     features: [
       "Vendor contract review & handover",
       "Minute-by-minute production schedules",
@@ -72,6 +76,7 @@ export const SERVICES: ServiceItem[] = [
     ctaText: "Book Day-of Coordination",
     ctaHref: "/contact?service=day-of-coordination",
     icon: "Clock",
+    image: "/image/6F160DCC-A405-46F8-8F48-18EC0D502775.JPG.jpeg",
     features: [
       "Comprehensive timeline execution",
       "Vendor arrival & setup supervision",
@@ -93,6 +98,7 @@ export const SERVICES: ServiceItem[] = [
     ctaText: "Start Your Journey",
     ctaHref: "/contact?service=couple-experience",
     icon: "HeartHandshake",
+    image: "/image/IMG_6473.PNG",
     features: [
       "72-hour guided wedding sprint",
       "Priority alignment & budget allocation formula",
@@ -113,6 +119,7 @@ export const SERVICES: ServiceItem[] = [
     ctaText: "Explore Event Styling",
     ctaHref: "/contact?service=event-styling",
     icon: "Palette",
+    image: "/image/IMG_5474.JPG.jpeg",
     features: [
       "Bespoke spatial layout & 3D mood boards",
       "Color theory, floral styling & tablescapes",
@@ -133,6 +140,7 @@ export const SERVICES: ServiceItem[] = [
     ctaText: "Get Operational Support",
     ctaHref: "/contact?service=planner-support",
     icon: "Briefcase",
+    image: "/image/BE5FEAFE-D62F-4FA1-ABFF-3BA8CB4B6A01.JPG.jpeg",
     features: [
       "Standard operating procedure (SOP) templates",
       "Proposal & client quotation systems",
@@ -153,6 +161,7 @@ export const SERVICES: ServiceItem[] = [
     ctaText: "Discover Academy Programs",
     ctaHref: "/contact?service=academy",
     icon: "GraduationCap",
+    image: "/image/E852D51D-55DD-4DAE-A565-D28F324D49AA.JPG.jpeg",
     features: [
       "Practical, field-tested masterclass modules",
       "Live event shadowing opportunities",
@@ -170,6 +179,7 @@ export const OCCASIONS: OccasionCategory[] = [
     description:
       "From traditional celebrations to modern vow exchanges, we orchestrate love stories with warmth, elegance, and unflinching attention to family traditions.",
     tag: "Romance & Milestone",
+    image: "/image/C481C71A-EDC2-4867-BEE8-209611EF45C7.PNG",
   },
   {
     id: "corporate",
@@ -177,6 +187,7 @@ export const OCCASIONS: OccasionCategory[] = [
     description:
       "Professional summits, annual general meetings, and multi-day executive retreats delivered with punctuality, tech precision, and polished hospitality.",
     tag: "Business & Summits",
+    image: "/image/E81D08BD-ED01-44B0-A575-7AB149615178.JPG.jpeg",
   },
   {
     id: "launches",
@@ -184,6 +195,7 @@ export const OCCASIONS: OccasionCategory[] = [
     description:
       "High-impact media gatherings, influencer dinners, and brand unveilings designed to generate excitement, press coverage, and memorable consumer touchpoints.",
     tag: "PR & Brand Experience",
+    image: "/image/IMG_5469.JPG.jpeg",
   },
   {
     id: "galas",
@@ -191,6 +203,7 @@ export const OCCASIONS: OccasionCategory[] = [
     description:
       "Large-scale productions featuring stage choreography, VIP hospitality suites, lighting programming, and seamless red-carpet operations.",
     tag: "High Production",
+    image: "/image/A6871AC0-4697-41F8-BD40-AA398BD2D776.JPG.jpeg",
   },
   {
     id: "fashion",
@@ -198,6 +211,7 @@ export const OCCASIONS: OccasionCategory[] = [
     description:
       "Runway curation, backstage lineup coordination, lighting transitions, and guest front-row seating managed with dynamic finesse.",
     tag: "Editorial & Runway",
+    image: "/image/4C124A78-B8F7-4455-8EDB-0AE901CF6FC9.JPG.jpeg",
   },
   {
     id: "private",
@@ -205,5 +219,6 @@ export const OCCASIONS: OccasionCategory[] = [
     description:
       "Curated milestone birthdays, bridal showers, anniversaries, and private dinners infused with intimacy, bespoke touches, and celebratory ease.",
     tag: "Intimate Gathering",
+    image: "/image/089C4C11-EC98-4FE7-9612-D2E1A8859628.JPG.jpeg",
   },
 ];

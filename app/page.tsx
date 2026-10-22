@@ -67,11 +67,8 @@ export default function HomePage() {
             preload="auto"
             className="w-full h-full object-cover scale-105 transition-transform duration-1000 ease-out"
           >
+            <source src="/videos/IMG_3293.MP4" type="video/mp4" />
             <source src="/videos/hero-event-loop.mp4" type="video/mp4" />
-            <source
-              src="https://assets.mixkit.co/videos/42795/42795-720.mp4"
-              type="video/mp4"
-            />
           </video>
 
           {/* Luxury Event Ambient Overlay Gradients */}
@@ -151,7 +148,7 @@ export default function HomePage() {
                 {/* Main Hero Card Container */}
                 <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80 dark:border-white/10 group">
                   <Image
-                    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85"
+                    src="/image/6F160DCC-A405-46F8-8F48-18EC0D502775.JPG.jpeg"
                     alt="Joyful wedding celebration by WAD Events"
                     fill
                     priority
@@ -236,8 +233,8 @@ export default function HomePage() {
             <div className="lg:col-span-5 relative order-2 lg:order-1">
               <div className="relative aspect-[4/3] sm:aspect-[16/11] rounded-3xl overflow-hidden shadow-xl border-2 border-wad-nude/80 dark:border-white/10">
                 <Image
-                  src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85"
-                  alt="WAD Events team in coordination"
+                  src="/image/228CA0FB-FD32-4CB2-A6C8-738465B93A8B.JPG.jpeg"
+                  alt="WAD Events vibrant celebration coordination"
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"
                   className="object-cover"

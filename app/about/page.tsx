@@ -43,8 +43,8 @@ export default function AboutPage() {
           <div className="lg:col-span-5 relative">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-white/10 group">
               <Image
-                src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85"
-                alt="WAD Events founder and planning in motion"
+                src="/image/IMG_6472.PNG"
+                alt="WAD Events couple celebrating in tranquility and joy"
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 500px"

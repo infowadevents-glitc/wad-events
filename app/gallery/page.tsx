@@ -18,6 +18,8 @@ import {
   Sparkles,
   Maximize2,
   MessageCircle,
+  Play,
+  Film,
 } from "lucide-react";
 
 export default function GalleryPage() {
